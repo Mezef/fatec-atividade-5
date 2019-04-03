@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Atividade 5 - Matheus Muniz</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="js/additional-methods.min.js" type="text/javascript"></script>
+	<script src="js/localization/messages_pt_BR.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		jQuery.validator.addMethod("cpf", function(value, element) {
+           value = jQuery.trim(value);
+            value = value.replace('.','');
+            value = value.replace('.','');
+            cpf = value.replace('-','');
+            while(cpf.length < 11 ) cpf = "0"+ cpf;  
+            var expReg = /^0+$|^1+$|^2+$|^3+$|^4+$|^5+$|^6+$|^7+$|^8+$|^9+$/;
+            var a = [];
+            var b = new Number;
+            var c = 11;
+            for (i=0; i<11; i++){
+                a[i] = cpf.charAt(i);
+                if (i < 9) b += (a[i] * --c);
+            }
+            if ((x = b % 11) < 2) { a[9] = 0 } else { a[9] = 11-x }
+            b = 0;
+            c = 11;
+            for (y=0; y<10; y++) b += (a[y] * c--);
+            if ((x = b % 11) < 2) { a[10] = 0; } else { a[10] = 11-x; }
+
+            var retorno = true;
+            if ((cpf.charAt(9) != a[9]) || (cpf.charAt(10) != a[10]) || cpf.match(expReg)) retorno = false;
+
+            return this.optional(element) || retorno;
+
+        }, "Informe um CPF válido");
+
+        jQuery.validator.addMethod("véia",function(value,element){
+                        if(value.toLowerCase().indexOf("véia") >= 0){
+                            return true
+                        }else {
+                            return false
+                        }
+                    }, "Tem que ter véia no nome!");
+
+		$(document).ready(function(){
+                        $("#formulario").validate({
+                            rules: {
+                                nome: {
+                                    required: true,
+                                    minlength: 10,
+                                    minWords: 2
+                                },
+                                email: {
+                                	required: true,
+                                	email: true
+                                },
+                                professora: {
+				                 	required: true,
+				                 	véia: true
+				                 },
+				                data: {
+				                	required: true,
+				                	date: true
+				                },
+                                cpf: {
+                                	required: true,
+                                	cpf: true
+                               	},
+                                 messages: {
+				                 cpf: { 
+				                 	cpf: 'CPF inválido'
+				                } 
+				              	}
+                            },
+                            submitHandler: function(form){
+                                alert("Cadastrado com sucesso!")
+                            }
+                        })
+                    })
+	</script>
+</head>
+
+<body>
+	<div class="container-fluid">
+	
+		<header class="row no-gutters">
+		<!--TOP A-->
+			<div class="col-12 col-md-6" id="topa">
+				<a href="index.html"><img class="img-responsive" src="fotos/logofatec.png"></a>
+			</div>	
+
+		<!--TOP E-->
+			<div class="col-12 col-md-6 d-flex justify-content-center align-items-center" id="tope">
+				<a class="btn btn-primary" href="form.html" role="button">Cadastre-se</a>
+				<a class="btn btn-primary" href="livre.html" role="button">Linguagens de Programação</a>
+			</div>	
+		</header>
+
+		<!--BODY B-->
+		<div id="body">
+			<section class="row">
+				<div class="col-12 col-md-12 text-justify">
+					<h2>< /Informe os campos à seguir para que possamos entrar em contato. ></h2>
+
+					<div class="card">
+						<div class="card-header">
+							Cadastro
+						</div>
+
+							<div class="card-body">
+								<form name="formulario" id="formulario" method="post">
+						            <div class="form-group">
+						            	<label for="nome">Nome Completo:</label>
+						            		<input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" class="form-control">
+						            </div>
+						            <div class="form-group">
+						            	<label for="email">E-mail:</label>
+						            		<input type="text" name="email" id="email" placeholder="Digite um e-mail válido" class="form-control">
+						            </div>
+						            <div class="form-group">
+						            	<label for="cpf">CPF:</label>
+						            		<input type="digits" name="cpf" id="cpf" placeholder="Digite seu CPF sem pontos ou traços" class="form-control">
+						            </div>
+						            <div class="form-group">
+						            	<label for="professora">Primeira Professora:</label>
+						            		<input type="text" name="professora" id="professora" placeholder="Digite o nome da sua primeira professora" class="form-control">
+						            </div>
+						            <div class="form-group">
+						            	<label for="data">Data de nascimento:</label>
+						            		<input type="date" name="data" id="data" class="form-control">
+						            </div>
+						            <input class="btn btn-primary" type="submit" value="Enviar"/>
+						        </form>
+						    </div>
+						</div>						
+					</div>
+				</div>				
+			</section>
+		</div>
+			<footer class="row no-gutters">
+            		<!--FOOTER C-->
+                		<div class="col-12 col-md-6" id="footerd">
+                            <div class="row d-flex justify-content-center">
+                            <img src="fotos/profissional.jpg">
+                            </div>
+                            <div class="row d-flex justify-content-end">
+                            <p class="text-center">
+                                Matheus Muniz <br>
+                                Aprendiz em programação, expandindo o conhecimento em cada uma das áreas de atuação de desenvolvimento para descobrir no que focar.
+                            </p>
+                            </div>
+                        </div> 
+               		<!--FOOTER D-->
+                		<div class="col-12 col-md-6 d-flex justify-content-center align-items-end" id="footerc">
+                            <p class="font-weight-light text-center">Fatec Guaratinguetá - Linguagem de programação<br>Layout criado por Matheus Muniz para a atividade 5
+                            </p>
+                        </div> 
+            	</footer>  
+	</div>
+
+</body>
+</html>

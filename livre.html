@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Atividade 5 - Matheus Muniz</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+
+<body>
+	<div class="container-fluid">
+	
+		<header class="row no-gutters">
+		<!--TOP A-->
+			<div class="col-12 col-md-6" id="topa">
+				<a href="index.html"><img class="img-responsive" src="fotos/logofatec.png"></a>
+			</div>	
+
+		<!--TOP E-->
+			<div class="col-12 col-md-6 d-flex justify-content-center align-items-center" id="tope">
+				<a class="btn btn-primary" href="form.html" role="button">Cadastre-se</a>
+				<a class="btn btn-primary" href="livre.html" role="button">Linguagens de Programação</a>
+			</div>	
+		</header>
+
+		<!--BODY B-->
+			<section class="row">
+				<div class="col-12 col-md-12 card card-body text-justify">
+					<img src="fotos/aprenderaprogramar.png" class="img-fluid">
+					<hr>
+					<h2 class="text-center">5 Linguagens de Programação que são bastante usadas</h2>
+					<h6 class="text-center">Clique em cima para saber mais</h6>
+
+				<div id="accordion">
+					<div class="text-center">
+						<a class="btn" data-toggle="collapse" href="#c" role="button" aria-expanded="false" aria-controls="c">
+    					<img src="fotos/c.png" id="c1">
+  						</a>
+
+  						<a class="btn" data-toggle="collapse" href="#cpp" role="button" aria-expanded="false" aria-controls="cpp">
+    					<img src="fotos/cpp.png" id="cpp1">
+  						</a>
+
+  						<a class="btn" data-toggle="collapse" href="#csharp" role="button" aria-expanded="false" aria-controls="csharp">
+    					<img src="fotos/csharp.png" id="csharp1">
+  						</a>
+
+  						<a class="btn" data-toggle="collapse" href="#java" role="button" aria-expanded="false" aria-controls="java">
+    					<img src="fotos/java.png" id="java1">
+  						</a>
+
+  						<a class="btn" data-toggle="collapse" href="#python" role="button" aria-expanded="false" aria-controls="python">
+    					<img src="fotos/python.png" id="python1">
+  						</a>
+  						<br><br>
+					</div>
+				
+					<div class="collapse" id="c" data-parent="#accordion">
+					  <div class="card card-body">
+					  	<p>
+					    Talvez a mais conhecida entre as linguagens de programação - principalmente pelas suas variantes C++ e C# -, a linguagem C também é uma das mais antigas já lançadas. Sua principal vantagem está também na facilidade de portar um programa para outro tipo de dispositivo. Vale notar também que a linguagem C, desde cedo, foi adotada por gigantes como Microsoft e Linux, entre outros.
+					    <br><br>
+						Apesar de antigo, aprender C traz boas vantagens ao desenvolvedor, já que funciona em quase todo tipo de sistema e não exige muito das máquinas. Por conta dessa pouca exigência de performance, a linguagem C é bastante usada para criar softwares para aparelhos pequenos e dispositivos que contam com a Internet das Coisas (IoT).
+						</p>
+					  </div>
+					</div>   
+
+					<div class="collapse" id="cpp" data-parent="#accordion">
+					  <div class="card card-body">
+					  	<p>
+					    Um dos principais motivos pelo qual o C é uma das linguagens mais populares também se dá pela própria popularidade de suas variantes. O C++ é uma versão mais atual do C - embora também já tenha certa idade - e é bastante utilizado no desenvolvimento de softwares mais pesados, como sistemas integrados (CRM), aplicações que promovem interação entre cliente e servidor ou jogos para computador, entre outros.
+						</p>
+					  </div>
+					</div> 
+
+					<div class="collapse" id="csharp" data-parent="#accordion">
+					  <div class="card card-body">
+					  	<p>
+					    Outra variação da linguagem C que é bastante popular no mercado. Porém, anda caindo em desuso em relação a anos anteriores. Assim como o C++, é mais complexo de se aprender que outras linguagens como Python e JavaScript. Por outro lado, ainda é uma linguagem bastante requisitada na área de desenvolvimento de games, se tornando essencial para quem planeja entrar nesse mercado.
+						</p>
+					  </div>
+					</div> 
+
+					<div class="collapse" id="java" data-parent="#accordion">
+					  <div class="card card-body">
+					  	<p>
+					    A linguagem de programação mais solicitada de longe é o Java. No topo da maioria dos índices especializados na medição da popularidade, o Java se caracteriza por ser portável, ou seja, é possível compilar um programa em Java de maneira fácil para todo tipo de aparelho. Vale lembrar também que o Java é a linguagem mais usada para a criação de aplicativos Android.
+						<br><br>
+						Outro ponto positivo do Java é a sua escalabilidade, ou seja, a capacidade de adaptar seu programa à medida que ele cresce em número de utilizações, além de sua retrocompatibilidade, já que um código feito em uma versão antiga continua a ser reconhecida pelas versões atuais.
+						</p>
+					  </div>
+					</div> 
+
+					<div class="collapse" id="python" data-parent="#accordion">
+					  <div class="card card-body">
+					  	<p>
+					    Considerada a linguagem de mais fácil aprendizado, a Python continua a ser uma das mais populares no mercado, mesmo que tenha sido lançada há quase 30 anos atrás (em 1989). É um dos códigos de mais fácil leitura e é bastante utilizado para desenvolvimento web e machine learning.
+						</p>
+					  </div>
+					</div> 
+				</div>				
+			</section>
+			<footer class="row no-gutters">
+            		<!--FOOTER C-->
+                		<div class="col-12 col-md-6" id="footerd">
+                            <div class="row d-flex justify-content-center">
+                            <img src="fotos/profissional.jpg">
+                            </div>
+                            <div class="row d-flex justify-content-end">
+                            <p class="text-center">
+                                Matheus Muniz <br>
+                                Aprendiz em programação, expandindo o conhecimento em cada uma das áreas de atuação de desenvolvimento para descobrir no que focar.
+                            </p>
+                            </div>
+                        </div> 
+               		<!--FOOTER D-->
+                		<div class="col-12 col-md-6 d-flex justify-content-center align-items-end" id="footerc">
+                            <p class="font-weight-light text-center">Fatec Guaratinguetá - Linguagem de programação<br>Layout criado por Matheus Muniz para a atividade 5
+                            </p>
+                        </div> 
+            	</footer> 
+	</div>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+</body>
+</html>
